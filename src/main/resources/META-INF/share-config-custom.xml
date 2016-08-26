@@ -1,0 +1,163 @@
+<alfresco-config>
+    <!-- Document Library config section -->
+    <config evaluator="string-compare" condition="DocumentLibrary">
+    	<aspects>
+    		<!-- Aspects that a user can see -->
+		    <visible>
+		        <aspect name="cb:emailable" />            
+		    </visible>
+		
+		    <!-- Aspects that a user can add. Same as "visible" if left empty -->
+		    <addable>
+		    </addable>
+		
+		    <!-- Aspects that a user can remove. Same as "visible" if left empty -->
+		    <removeable>
+		    </removeable>
+    	</aspects>
+    	<types>
+		    <type name="cm:content">
+		        <subtype name="cb:email" />
+		    </type>
+		</types>
+    </config>
+    
+    <!-- cb:email type (existing nodes) -->
+   <config evaluator="node-type" condition="cb:email">
+      <forms>
+         <!-- Default form configuration for the cb:email type -->
+         <form>
+            <field-visibility>
+            
+            	<!-- surf:widget aspect -->
+			    <show id="surf:widgetType"/>
+			    <show id="surf:mid"/>
+			    <show id="surf:label"/>
+			    
+               <show id="mimetype" />
+               <show id="cm:creator" for-mode="view" />
+               <show id="size" for-mode="view" />
+               <show id="cb:status" />
+               <show id="cb:attachment" />
+               
+               <!-- cb:emailable -->
+               <show id="cb:subject" />
+               <show id="cb:receivedDate" />
+               <show id="cb:from" />
+               <show id="cb:to" />
+               
+            </field-visibility>
+            <appearance>
+                              
+               <set id="cm:content2cols" template="/org/alfresco/components/form/2-column-set.ftl" />
+               
+               <field set="cm:content2cols" id="mimetype">
+                  <control template="/org/alfresco/components/form/controls/mimetype.ftl" />
+               </field>
+               
+               <field set="cm:content2cols" id="size">
+                  <control template="/org/alfresco/components/form/controls/size.ftl" />
+               </field>
+               
+               <field set="cm:content2cols" id="cm:creator" />
+               
+               <field id="cb:status" label-id="prop.cb_status"/>
+               <field id="cb:attachment" label-id="assoc.cb_attachment" />
+            </appearance>
+         </form>
+
+         <!-- Document Library pop-up Edit Metadata form -->
+         <form id="doclib-simple-metadata">
+            <field-visibility>
+            	<!-- surf:widget aspect -->
+			    <show id="surf:widgetType"/>
+			    <show id="surf:mid"/>
+			    <show id="surf:label"/>
+			    
+               <show id="cm:name" />
+               <show id="cm:title" force="true" />
+               <show id="cm:description" force="true" />
+               <!-- tags and categories -->
+               <show id="cm:taggable" for-mode="edit" force="true" />
+               <show id="cm:categories" />
+            </field-visibility>
+            <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl" />
+            <appearance>
+               <field id="cm:name">
+                 <control>
+                    <control-param name="maxLength">255</control-param>
+                 </control>
+               </field>
+               <field id="cm:title">
+                  <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+               </field>
+               <field id="cm:description">
+                  <control>
+                     <control-param name="activateLinks">true</control-param>
+                  </control>
+               </field>
+               <field id="cm:taggable">
+                  <control>
+                     <control-param name="compactMode">true</control-param>
+                     <control-param name="params">aspect=cm:taggable</control-param>
+                     <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                     <control-param name="createNewItemIcon">tag</control-param>
+                  </control>
+               </field>
+               <field id="cm:categories">
+                  <control>
+                     <control-param name="compactMode">true</control-param>
+                  </control>
+               </field>
+               <field id="cb:status" label-id="prop.cb_status"/>
+               <field id="cb:attachment" label-id="assoc.cb_attachment" />
+            </appearance>
+         </form>
+         
+         <!-- Document Library Inline Edit form -->
+         <form id="doclib-inline-edit">
+            <field-visibility>
+               <show id="cm:name" />
+               <show id="cm:content" force="true" />
+               <show id="cm:title" force="true" />
+               <show id="cm:description" force="true" />
+            </field-visibility>
+            <appearance>
+               <field id="cm:name">
+                 <control>
+                    <control-param name="maxLength">255</control-param>
+                 </control>
+               </field>
+               <field id="cm:title">
+                  <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+               </field>
+               <field id="cm:content" label-id="">
+                  <control>
+                     <control-param name="editorAppearance">explorer</control-param>
+                     <control-param name="forceEditor">true</control-param>
+                  </control>
+               </field>
+            </appearance>
+         </form>
+      </forms>
+   </config>
+   <!-- biar ada di semua doc yang ada ininya -->
+   <config evaluator="aspect" condition="cb:emailable">
+	    <forms>
+	        <form>
+	            <field-visibility>
+	               <show id="cb:subject" />
+	               <show id="cb:receivedDate" />
+	               <show id="cb:from" />
+	               <show id="cb:to" />
+	            </field-visibility>
+	            <appearance>
+	            	<field id="cb:subject" label-id="prop.cb_subject" />
+	            	<field id="cb:receivedDate" label-id="prop.cb_receivedDate" />
+	            	<field id="cb:from" label-id="prop.cb_from" />
+	            	<field id="cb:to" label-id="prop.cb_to" />
+	            </appearance>
+	        </form>
+	    </forms>
+	</config>
+</alfresco-config>
