@@ -1,6 +1,6 @@
-add|/WEB-INF/lib/coba-semua-share-1.0-SNAPSHOT.jar
 add|/WEB-INF/classes/alfresco/web-extension/messages/coba-semua-share.properties
 add|/WEB-INF/classes/alfresco/web-extension/messages/cbModel.properties
+add|/WEB-INF/classes/alfresco/web-extension/messages/awWorkflow.properties
 add|/WEB-INF/classes/alfresco/web-extension/site-data/extensions/coba-semua-share-example-widgets.xml
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.desc.xml
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.html.ftl
@@ -8,6 +8,7 @@ add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/si
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/org/alfresco/README.md
 add|/WEB-INF/classes/alfresco/web-extension/coba-semua-share-context.xml
 add|/WEB-INF/classes/alfresco/web-extension/coba-semua-share-slingshot-application-context.xml
+update|/WEB-INF/lib/coba-semua-share-1.0-SNAPSHOT.jar|/WEB-INF/classes/alfresco/module/backup/7da6e1ef-7416-11e6-82c4-1587ceb2b162.bin
 mkdir|/WEB-INF/classes/alfresco/web-extension/messages
 mkdir|/WEB-INF/classes/alfresco/web-extension/site-data/extensions
 mkdir|/WEB-INF/classes/alfresco/web-extension/site-data

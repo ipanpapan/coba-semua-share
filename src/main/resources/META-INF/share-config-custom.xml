@@ -160,4 +160,366 @@
 	        </form>
 	    </forms>
 	</config>
+	
+	<config evaluator="string-compare" condition="activiti$reviewEmail">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="transitions" />
+               <show id="bpm:status" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+ 			   <set id="progress" appearance="title" label-id="workflow.set.task.progress" />               
+               <set id="other" appearance="title" label-id="workflow.set.other" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="bpm:status" set="progress" />
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="cbwf:submitReviewTask">
+      <forms>
+         <form id="workflow-details">
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="transitions" />
+               <show id="bpm:status" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+ 			   <set id="progress" appearance="title" label-id="workflow.set.task.progress" />               
+               <set id="other" appearance="title" label-id="workflow.set.other" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="bpm:status" set="progress" />               
+            </appearance>
+         </form>
+      </forms>
+    </config>
+	
+	<config evaluator="task-type" condition="cbwf:activitiReviewTask">
+	    <forms>
+	        <form>
+	            <field-visibility>
+	                <show id="bpm:workflowDescription" />
+	                <show id="packageItems" />
+	                <show id="cbwf:approveRejectOutcome" />
+	                <show id="transitions" />
+	            </field-visibility>
+	            <appearance>
+	                <set id="" appearance="title" label-id="workflow.set.general" />
+	                <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+	                <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+	                <set id="items" appearance="title" label-id="workflow.set.items" />
+	                <set id="response" appearance="title" label-id="workflow.set.response" />
+	                <field id="bpm:workflowDescription" label-id="workflow.field.message">
+	                    <control template="/org/alfresco/components/form/controls/textarea.ftl">
+	                        <control-param name="style">width: 95%</control-param>
+	                    </control>
+	                </field>
+	                <field id="packageItems" set="items" />
+	                <field id="cbwf:approveRejectOutcome" set="response" />
+	                <field id="transitions" set="response" />
+	            </appearance>
+	        </form>
+	    </forms>
+	</config>
+	
+	<config evaluator="task-type" condition="cbwf:activitiReview">
+      <forms>
+         <form id="workflow-details">
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="cbwf:approveRejectOutcome" />
+               <show id="transitions" />
+               <show id="bpm:status" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="cbwf:approveRejectOutcome" set="response" />               
+               <field id="transitions" set="response" />
+               <field id="bpm:status" set="progress" />
+            </appearance>
+         </form>
+         <form>
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="cbwf:approveRejectOutcome" />
+               <show id="transitions" />
+               <show id="bpm:status" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="cbwf:approveRejectOutcome" set="response" />               
+               <field id="transitions" set="response" />
+               <field id="bpm:status" set="progress" />               
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="cbwf:activitiApprovedNotification">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="transitions" />
+               <show id="bpm:status" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="transitions" set="response" />
+               <field id="bpm:status" set="progress" />               
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="string-compare" condition="activiti$arrangeWawancara">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="awwf:tanggalWaktuWawancara" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+ 			   <set id="progress" appearance="title" label-id="workflow.set.task.progress" />               
+               <set id="other" appearance="title" label-id="workflow.set.other" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="awwf:tanggalWaktuWawancara">
+               		<control template="/org/alfresco/components/form/controls/date.ftl">
+               			<control-param name="showTime">true</control-param>
+               		</control>
+               </field>
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="awwf:submitRequest">
+      <forms>
+         <form id="workflow-details">
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="awwf:tanggalWaktuWawancara" />
+               <show id="awwf:catatanArrangeWawancara" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+ 			   <set id="progress" appearance="title" label-id="workflow.set.task.progress" />               
+               <set id="other" appearance="title" label-id="workflow.set.other" />
+               
+               <field id="packageItems" set="items" />
+               <field id="awwf:tanggalWaktuWawancara">
+               		<control template="/org/alfresco/components/form/controls/date.ftl">
+               			<control-param name="showTime">true</control-param>
+               		</control>
+               </field>
+               <field id="awwf:catatanArrangeWawancara" />
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="awwf:activitiWawancaraTask">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="bpm:workflowDescription" />
+               <show id="packageItems" />
+               <show id="awwf:lanjutTidakLanjutOutcome" />
+               <show id="transitions" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="bpm:workflowDescription" label-id="workflow.field.message">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                     <control-param name="style">width: 95%</control-param>
+                  </control>
+               </field>
+               <field id="packageItems" set="items" />
+               <field id="awwf:approveRejectOutcome" set="response" />
+               <field id="transitions" set="response" />         
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="awwf:activitiArrangeWawancara">
+      <forms>         
+         <form>
+            <field-visibility>
+               <show id="packageItems" />
+               <show id="awwf:lanjutTidakLanjutOutcome" />
+               <show id="bpm:comment" />
+               <show id="transitions" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="packageItems" set="items" />
+				<field id="bpm:comment" label-id="workflow.field.comment" set="info">
+		          <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+		        </field>
+               <field id="awwf:lanjutTidakLanjutOutcome" set="response" />
+               <field id="transitions" set="response" />
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    
+    <config evaluator="task-type" condition="awwf:activitiLaporWawancara">
+      <forms>
+      	<form>
+            <field-visibility>
+               <show id="packageItems" />
+               <show id="awwf:lanjutTidakLanjutOutcome" />
+               <show id="awwf:requestorTeknikalOutcome" />
+               <show id="awwf:requestorNonTeknikalOutcome" />
+               <show id="awwf:catatanArrangeWawancara" />
+               <show id="bpm:comment" />
+               <show id="transitions" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="packageItems" set="items" />
+               <field id="awwf:lanjutTidakLanjutOutcome" set="response" />
+               <field id="awwf:requestorTeknikalOutcome" />
+               <field id="awwf:requestorNonTeknikalOutcome" />
+               <field id="awwf:catatanArrangeWawancara">
+               		<control template="/org/alfresco/components/form/controls/info.ftl" />
+		        </field>
+		        <field id="bpm:comment">
+		        	<control template="/org/alfresco/components/form/controls/textarea.ftl" />
+		        </field>
+               <field id="transitions" set="response" />
+            </appearance>
+         </form>
+      </forms>
+    </config>
+    <config evaluator="task-type" condition="awwf:activitiLaporWawancara2">
+      <forms>
+      	<form>
+            <field-visibility>
+               <show id="packageItems" />
+               <show id="awwf:komentarLaporanWawancara2" />
+               <show id="awwf:requestorTeknikalOutcome" />
+               <show id="awwf:requestorNonTeknikalOutcome" />
+               <show id="awwf:laporWawancara2Outcome" />
+               <show id="bpm:comment" />
+               <show id="transitions" />
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.general" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+               <set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+               <set id="response" appearance="title" label-id="workflow.set.response" />
+               
+               <field id="packageItems" set="items" />
+               <field id="awwf:lanjutTidakLanjutOutcome" set="response" />
+               <field id="awwf:laporWawancara2Outcome" />
+               <field id="awwf:komentarLaporanWawancara2">
+               		<control template="/org/alfresco/components/form/controls/info.ftl" />
+		        </field>
+		        <field id="awwf:requestorTeknikalOutcome">
+               		<control template="/org/alfresco/components/form/controls/info.ftl" />
+		        </field>
+		        <field id="awwf:requestorNonTeknikalOutcome">
+               		<control template="/org/alfresco/components/form/controls/info.ftl" />
+		        </field>
+		        <field id="bpm:comment">
+		        	<control template="/org/alfresco/components/form/controls/textarea.ftl" />
+		        </field>
+               <field id="transitions" set="response" />
+            </appearance>
+         </form>
+      </forms>
+    </config>
 </alfresco-config>
